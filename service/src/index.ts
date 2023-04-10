@@ -25,7 +25,7 @@ router.post('/chat-process', [auth, limiter], async (req, res) => {
   try {
     const { prompt, options = {}, systemMessage, temperature, top_p } = req.body as RequestProps
     let firstChunk = true
-    global.console.info({ 'IP_addr': req.ip, 'User-Agent': req.get('User-Agent') })
+    global.console.info({ 'IP_address': req.ip, 'User-Agent': req.get('User-Agent') })
     await chatReplyProcess({
       message: prompt,
       lastContext: options,
